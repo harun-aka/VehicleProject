@@ -15,7 +15,7 @@ namespace WebAPI.Controllers
             _carService = carService;
         }
 
-        [HttpGet("delete")]
+        [HttpDelete("delete")]
         public IActionResult Delete(int id)
         {
             var result = _carService.Delete(id);
@@ -27,7 +27,7 @@ namespace WebAPI.Controllers
             return BadRequest(result.Message);
         }
 
-        [HttpGet("togglehighlights")]
+        [HttpPost("togglehighlights")]
         public IActionResult ToggleHighlights(int id)
         {
             var result = _carService.ToggleHighlights(id);
